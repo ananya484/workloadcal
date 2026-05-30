@@ -27,7 +27,7 @@ Companion code for the manuscript submitted to *IEEE Sensors Letters* (under rev
 ## Reproduction from scratch (local)
 
 ```bash
-git clone https://github.com/ananya-sharma/workloadcal.git
+git clone https://github.com/ananya484/workloadcal.git
 cd workloadcal
 pip install -r requirements.txt
 jupyter notebook WorkloadCal.ipynb
@@ -46,15 +46,11 @@ The notebook automatically downloads the public dataset from Figshare:
 ```
 workloadcal/
 ├── WorkloadCal.ipynb            # main one-click reproducible notebook
-├── upgrade_cell.py              # extended analyses (warm-start, bootstrap, Wilcoxon, clinical threshold, Bland-Altman, permutation)
-├── generate_full_paper.py       # generates the full .docx paper
-├── generate_ieee_letter_v2.py   # generates the 4-page IEEE Sensors Letters version
 ├── requirements.txt             # pinned dependencies
 ├── LICENSE                      # MIT
 ├── CITATION.cff                 # citation metadata
 ├── figures/                     # publication-ready PNGs at 200 dpi
 ├── results/                     # metrics.json, CSVs, per-fold outputs
-└── paper/                       # manuscript drafts (.docx) and cover letter
 ```
 
 ## Key results
