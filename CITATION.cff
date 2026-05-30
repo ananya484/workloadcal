@@ -6,8 +6,8 @@ authors:
   - family-names: "Sharma"
     given-names: "Ananya"
     affiliation: "MIT School of Bioengineering Sciences and Research, MIT ADT University, Pune, India"
-    email: ananya.shrma.pune@gmail.com
-repository-code: "https://github.com/ananya-sharma/workloadcal"
+    email: ananya.sharma.pune@gmail.com
+repository-code: "https://github.com/ananya484/workloadcal"
 license: MIT
 keywords:
   - wearable sensors
