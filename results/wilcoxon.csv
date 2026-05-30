@@ -1,0 +1,4 @@
+comparison,statistic,p_one_sided,significant_at_0.05
+P > WEAR,153.0,0.00904083251953125,True
+P > LAB+WEAR,162.0,0.0026645660400390625,True
+WEAR > LAB+WEAR,107.0,0.3253746032714844,False

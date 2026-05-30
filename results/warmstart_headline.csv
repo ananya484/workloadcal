@@ -1,0 +1,5 @@
+K_warm_stages,mae,note
+0,1.02686934609271,pure LOSO (no warm-start)
+1,1.0879763534443592,1 baseline stage per held-out subject
+2,1.1564185795036463,2 baseline stages -- realistic deployment
+3,1.2253090039217602,3 baseline stages

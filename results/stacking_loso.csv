@@ -1,0 +1,4 @@
+model,mae,cv
+"Ridge (single, LAB+WEAR)",1.02686934609271,LOSO
+Stacking SVR+RF+KNN+Ridge,1.2045413710535928,LOSO
+Wu et al. stacking (reported),0.182,random 80/20 + bootstrap aug

@@ -1,0 +1,1344 @@
+{
+  "dataset_doi": "10.6084/m9.figshare.29279702",
+  "n_rows": 132,
+  "n_subjects": 19,
+  "target_range_mmol_L": [
+    1.11,
+    17.83
+  ],
+  "features_P": [
+    "hr"
+  ],
+  "features_WEAR_count": 22,
+  "features_LAB_WEAR_count": 43,
+  "best_WEAR_model": "Ridge",
+  "best_LAB_WEAR_model": "Ridge",
+  "headline_mae_P": 1.446,
+  "headline_mae_WEAR": 1.062,
+  "headline_mae_LAB_WEAR": 1.027,
+  "pct_improvement_WEAR_vs_P": 26.5,
+  "pct_improvement_LAB_WEAR_vs_P": 29.0,
+  "pct_improvement_LAB_vs_WEAR": 3.3,
+  "headline_table": [
+    {
+      "features": "P (HR only)",
+      "model": "Ridge",
+      "mae": 1.4456,
+      "rmse": 2.277,
+      "r2": 0.3045
+    },
+    {
+      "features": "P (HR only)",
+      "model": "RandomForest",
+      "mae": 1.4699,
+      "rmse": 2.3502,
+      "r2": 0.259
+    },
+    {
+      "features": "P (HR only)",
+      "model": "GradBoost",
+      "mae": 1.6485,
+      "rmse": 2.5843,
+      "r2": 0.104
+    },
+    {
+      "features": "P (HR only)",
+      "model": "XGBoost",
+      "mae": 1.6179,
+      "rmse": 2.5237,
+      "r2": 0.1455
+    },
+    {
+      "features": "P (HR only)",
+      "model": "LightGBM",
+      "mae": 1.454,
+      "rmse": 2.3716,
+      "r2": 0.2455
+    },
+    {
+      "features": "WEAR",
+      "model": "Ridge",
+      "mae": 1.0618,
+      "rmse": 1.701,
+      "r2": 0.6118
+    },
+    {
+      "features": "WEAR",
+      "model": "RandomForest",
+      "mae": 1.2053,
+      "rmse": 1.8021,
+      "r2": 0.5643
+    },
+    {
+      "features": "WEAR",
+      "model": "GradBoost",
+      "mae": 1.2751,
+      "rmse": 1.87,
+      "r2": 0.5309
+    },
+    {
+      "features": "WEAR",
+      "model": "XGBoost",
+      "mae": 1.2274,
+      "rmse": 1.8171,
+      "r2": 0.557
+    },
+    {
+      "features": "WEAR",
+      "model": "LightGBM",
+      "mae": 1.3253,
+      "rmse": 1.9583,
+      "r2": 0.4855
+    },
+    {
+      "features": "LAB+WEAR",
+      "model": "Ridge",
+      "mae": 1.0269,
+      "rmse": 1.6889,
+      "r2": 0.6173
+    },
+    {
+      "features": "LAB+WEAR",
+      "model": "RandomForest",
+      "mae": 1.19,
+      "rmse": 1.7744,
+      "r2": 0.5776
+    },
+    {
+      "features": "LAB+WEAR",
+      "model": "GradBoost",
+      "mae": 1.1887,
+      "rmse": 1.7988,
+      "r2": 0.5659
+    },
+    {
+      "features": "LAB+WEAR",
+      "model": "XGBoost",
+      "mae": 1.184,
+      "rmse": 1.7457,
+      "r2": 0.5912
+    },
+    {
+      "features": "LAB+WEAR",
+      "model": "LightGBM",
+      "mae": 1.2379,
+      "rmse": 1.8702,
+      "r2": 0.5308
+    }
+  ],
+  "conformal_summary": [
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 4.616969513124034,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 4.906242053898891,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 4.8186972081530985,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 9.658720451504013,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.643636287989885,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 5.752822148447352,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.643419478653367,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.624025459446122,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 2.897412740194351,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.28718970675531,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.75,
+      "mean_width": 3.4942818256314365,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.75,
+      "mean_width": 2.84867058799239,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.836323096915999,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.679906533157989,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 2.930033468934208,
+      "n_test": 8,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 10.87311466824121,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.976964471494942,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 3.8419624924751545,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.4224123154361905,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.738534505123663,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8,
+      "mean_width": 2.4014703224939886,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.877660744736131,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.524213740404829,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.5555555555555556,
+      "mean_width": 3.8012381969400177,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 11.405958363197017,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.295911047934498,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.508919463615358,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 9.622153316234053,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 5.127210349015478,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 3.3769481902808653,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 5.2495642800879,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.5,
+      "mean_width": 3.8019340926882594,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 3.7230532364627287,
+      "n_test": 6,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.081596656154436,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 4.5784888591347785,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 3.398040417357866,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 11.449965317533767,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 5.9579772448292445,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.977699268327834,
+      "n_test": 4,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 11.824113537531698,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 6.581310187368571,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.4444444444444444,
+      "mean_width": 2.779984182647268,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.658363499598922,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.7142857142857143,
+      "mean_width": 4.856768297839996,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7142857142857143,
+      "mean_width": 2.868293900016035,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 9.981778579577766,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.754917426086115,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.399368217377136,
+      "n_test": 5,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 5.8697312744154315,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 4.13996980663409,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 3.40838500090097,
+      "n_test": 7,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.713186056510986,
+      "n_test": 10,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.9,
+      "mean_width": 4.123351032229525,
+      "n_test": 10,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8,
+      "mean_width": 2.9943530417732456,
+      "n_test": 10,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.623178638677924,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 3.7935016737076177,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 2.937305795668576,
+      "n_test": 9,
+      "regime": "WEAR"
+    },
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 4.872506133518972,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 4.887729013036022,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 0,
+      "subject_held_out": "2",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 4.240534976828097,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 10.276786761070213,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.305293228174641,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 1,
+      "subject_held_out": "3",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.375471900486944,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.937468055439417,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 5.688805766760597,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 2,
+      "subject_held_out": "4",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.75,
+      "mean_width": 3.1800390582626754,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.916721725958542,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.7248961743981415,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 3,
+      "subject_held_out": "5",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 3.8280475962959737,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.875,
+      "mean_width": 9.642919644161793,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.875,
+      "mean_width": 4.427210421132779,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 4,
+      "subject_held_out": "6",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.75,
+      "mean_width": 3.3632884561705727,
+      "n_test": 8,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 11.454677777171925,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.36858624355082,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 5,
+      "subject_held_out": "7",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.905999690614313,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.944743276897303,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.252249774772823,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 6,
+      "subject_held_out": "8",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.6,
+      "mean_width": 2.685458674437744,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 9.356432766275699,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.526740831180758,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 7,
+      "subject_held_out": "9",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 3.5507160239137012,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 11.766377440231333,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.977037712037401,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 8,
+      "subject_held_out": "10",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 3.7081047620622924,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.8888888888888888,
+      "mean_width": 6.632425393402042,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.793774308646356,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 9,
+      "subject_held_out": "11",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.5555555555555556,
+      "mean_width": 2.4464041292316443,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.5,
+      "mean_width": 4.164944226694304,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.5,
+      "mean_width": 4.435409251389835,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 10,
+      "subject_held_out": "12",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.5,
+      "mean_width": 4.160928301955686,
+      "n_test": 6,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 7.232778277053236,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 5.097574155491384,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 11,
+      "subject_held_out": "13",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.42857142857142855,
+      "mean_width": 2.973079757784633,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 11.206962845341476,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.007933395954796,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 12,
+      "subject_held_out": "14",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.284087007724112,
+      "n_test": 4,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 9.346234232530291,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.6666666666666666,
+      "mean_width": 6.614736696732902,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 13,
+      "subject_held_out": "15",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.5555555555555556,
+      "mean_width": 3.61875173556891,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 10.382704494982319,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.40488329460407,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 14,
+      "subject_held_out": "16",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7142857142857143,
+      "mean_width": 2.583618543035851,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 10.38689777917591,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 8.068369549923872,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 15,
+      "subject_held_out": "17",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.148378192047988,
+      "n_test": 5,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 6.927888037898141,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 5.265091211551038,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 16,
+      "subject_held_out": "18",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.8571428571428571,
+      "mean_width": 3.727817140110628,
+      "n_test": 7,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 1.0,
+      "mean_width": 6.1323613990149095,
+      "n_test": 10,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 1.0,
+      "mean_width": 4.435097968983334,
+      "n_test": 10,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 17,
+      "subject_held_out": "19",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.9,
+      "mean_width": 3.7295611011299976,
+      "n_test": 10,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.05,
+      "target_coverage": 0.95,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 5.290757088559786,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.1,
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 3.86489270028277,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    },
+    {
+      "fold": 18,
+      "subject_held_out": "20",
+      "alpha": 0.2,
+      "target_coverage": 0.8,
+      "empirical_coverage": 0.7777777777777778,
+      "mean_width": 3.016013633430134,
+      "n_test": 9,
+      "regime": "LAB+WEAR"
+    }
+  ],
+  "ablations": [
+    {
+      "ablation": "Full (LAB+WEAR)",
+      "n_features": 43,
+      "mae": 1.0269,
+      "rmse": 1.6889,
+      "r2": 0.6173
+    },
+    {
+      "ablation": "- VO2 / ventilation",
+      "n_features": 29,
+      "mae": 1.0227,
+      "rmse": 1.6719,
+      "r2": 0.625
+    },
+    {
+      "ablation": "- RER / metabolic",
+      "n_features": 36,
+      "mae": 1.0993,
+      "rmse": 1.741,
+      "r2": 0.5934
+    },
+    {
+      "ablation": "- HR derivatives",
+      "n_features": 39,
+      "mae": 1.0621,
+      "rmse": 1.6742,
+      "r2": 0.624
+    },
+    {
+      "ablation": "- HRV (LF/HF)",
+      "n_features": 39,
+      "mae": 1.1584,
+      "rmse": 1.8003,
+      "r2": 0.5652
+    },
+    {
+      "ablation": "- Gait features",
+      "n_features": 38,
+      "mae": 0.993,
+      "rmse": 1.6582,
+      "r2": 0.6311
+    },
+    {
+      "ablation": "- Cumulative features",
+      "n_features": 39,
+      "mae": 1.0379,
+      "rmse": 1.6956,
+      "r2": 0.6143
+    },
+    {
+      "ablation": "- Subject-relative",
+      "n_features": 39,
+      "mae": 1.0446,
+      "rmse": 1.6895,
+      "r2": 0.6171
+    },
+    {
+      "ablation": "WEAR-only",
+      "n_features": 22,
+      "mae": 1.0618,
+      "rmse": 1.701,
+      "r2": 0.6118
+    },
+    {
+      "ablation": "P (HR only)",
+      "n_features": 1,
+      "mae": 1.4456,
+      "rmse": 2.277,
+      "r2": 0.3045
+    }
+  ],
+  "feature_importance_top15": []
+}

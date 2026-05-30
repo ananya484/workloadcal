@@ -1,0 +1,198 @@
+{
+  "warmstart": [
+    {
+      "K_warm": 0,
+      "features": "LAB+WEAR",
+      "mae": 1.02686934609271,
+      "rmse": 1.6888885880231046,
+      "r2": 0.6173458685341318
+    },
+    {
+      "K_warm": 1,
+      "features": "LAB+WEAR",
+      "mae": 1.0879763534443592,
+      "rmse": 1.736347317070102,
+      "r2": 0.5966704535014253
+    },
+    {
+      "K_warm": 1,
+      "features": "WEAR",
+      "mae": 1.1032228639934045,
+      "rmse": 1.730908143301297,
+      "r2": 0.599193385888597
+    },
+    {
+      "K_warm": 2,
+      "features": "LAB+WEAR",
+      "mae": 1.1564185795036463,
+      "rmse": 1.8495123202767378,
+      "r2": 0.5593466195937079
+    },
+    {
+      "K_warm": 2,
+      "features": "WEAR",
+      "mae": 1.1910025033658445,
+      "rmse": 1.8495867230292944,
+      "r2": 0.5593111654001617
+    },
+    {
+      "K_warm": 3,
+      "features": "LAB+WEAR",
+      "mae": 1.2253090039217602,
+      "rmse": 1.9533872204937788,
+      "r2": 0.531146937384237
+    },
+    {
+      "K_warm": 3,
+      "features": "WEAR",
+      "mae": 1.2627759539677217,
+      "rmse": 1.9450014931123512,
+      "r2": 0.5351637905208995
+    }
+  ],
+  "bootstrap_95ci": [
+    {
+      "features": "P (HR only)",
+      "mean_mae": 1.3716924885965573,
+      "ci_lo_95": 1.0940506978629474,
+      "ci_hi_95": 1.6944724201972008
+    },
+    {
+      "features": "WEAR",
+      "mean_mae": 1.0650488685096646,
+      "ci_lo_95": 0.8138153702472275,
+      "ci_hi_95": 1.3635831927944986
+    },
+    {
+      "features": "LAB+WEAR",
+      "mean_mae": 1.032688183763929,
+      "ci_lo_95": 0.7985048735832659,
+      "ci_hi_95": 1.3190624164567246
+    }
+  ],
+  "wilcoxon": [
+    {
+      "comparison": "P > WEAR",
+      "statistic": 153.0,
+      "p_one_sided": 0.00904083251953125,
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "P > LAB+WEAR",
+      "statistic": 162.0,
+      "p_one_sided": 0.0026645660400390625,
+      "significant_at_0.05": true
+    },
+    {
+      "comparison": "WEAR > LAB+WEAR",
+      "statistic": 107.0,
+      "p_one_sided": 0.3253746032714844,
+      "significant_at_0.05": false
+    }
+  ],
+  "threshold_clinical": [
+    {
+      "threshold_mmol_L": 4.0,
+      "n_above": 57,
+      "n_below": 75,
+      "TP": 50,
+      "TN": 63,
+      "FP": 12,
+      "FN": 7,
+      "sensitivity": 0.8771929824561403,
+      "specificity": 0.84,
+      "PPV": 0.8064516129032258,
+      "NPV": 0.9,
+      "AUC": 0.9291228070175438
+    }
+  ],
+  "permutation_top15": [
+    {
+      "feature": "hrv_lf_log",
+      "importance_mean": 0.9694254332738612,
+      "importance_std": 0.12038796568805812
+    },
+    {
+      "feature": "speed_pct_max",
+      "importance_mean": 0.7482282320234767,
+      "importance_std": 0.08924821413961372
+    },
+    {
+      "feature": "hr_cum",
+      "importance_mean": 0.6032781422885025,
+      "importance_std": 0.06772293663949604
+    },
+    {
+      "feature": "hrv_hf_log",
+      "importance_mean": 0.5967560405231761,
+      "importance_std": 0.06793772821484041
+    },
+    {
+      "feature": "ci",
+      "importance_mean": 0.4702699746704535,
+      "importance_std": 0.04784461730566294
+    },
+    {
+      "feature": "hr",
+      "importance_mean": 0.1940923208042234,
+      "importance_std": 0.02756784411042904
+    },
+    {
+      "feature": "stage_idx",
+      "importance_mean": 0.1897153040525908,
+      "importance_std": 0.02698082053751597
+    },
+    {
+      "feature": "ve_pct_max",
+      "importance_mean": 0.17270673049677468,
+      "importance_std": 0.02657199776399038
+    },
+    {
+      "feature": "bf",
+      "importance_mean": 0.15756393118601641,
+      "importance_std": 0.026904312374382913
+    },
+    {
+      "feature": "vo2_pct_max",
+      "importance_mean": 0.1533371600138848,
+      "importance_std": 0.02521247322939133
+    },
+    {
+      "feature": "rer",
+      "importance_mean": 0.15152374044717717,
+      "importance_std": 0.028380334738559644
+    },
+    {
+      "feature": "hr_pct_max",
+      "importance_mean": 0.1513151924840275,
+      "importance_std": 0.02580252218750352
+    },
+    {
+      "feature": "vco2",
+      "importance_mean": 0.14946901264513535,
+      "importance_std": 0.022467404192458046
+    },
+    {
+      "feature": "speed_dt",
+      "importance_mean": 0.14394190599665685,
+      "importance_std": 0.02227539266369874
+    },
+    {
+      "feature": "vo2_dt",
+      "importance_mean": 0.11851255341864077,
+      "importance_std": 0.02218045138336875
+    }
+  ],
+  "per_subject_mae": {
+    "best": 0.3963725491960656,
+    "worst": 2.8618059767930775,
+    "mean": 1.0385918895536073,
+    "median": 0.8569437716720154
+  },
+  "bland_altman": {
+    "bias": -0.14734709943582996,
+    "sd": 1.6824486604477782,
+    "upper_loa": 3.150252275041815,
+    "lower_loa": -3.4449464739134754
+  }
+}

@@ -1,0 +1,2 @@
+threshold_mmol_L,n_above,n_below,TP,TN,FP,FN,sensitivity,specificity,PPV,NPV,AUC
+4.0,57,75,50,63,12,7,0.8771929824561403,0.84,0.8064516129032258,0.9,0.9291228070175438
