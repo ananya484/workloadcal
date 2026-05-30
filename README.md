@@ -98,4 +98,4 @@ Dataset: CC BY 4.0 (Figshare; reused under licence)
 ## Contact
 
 Ananya Sharma — MIT School of Bioengineering Sciences and Research, MIT ADT University, Pune, India
-Email: ananya.shrma.pune@gmail.com
+Email: ananya.sharma.pune@gmail.com
