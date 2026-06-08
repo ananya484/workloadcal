@@ -5,7 +5,7 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/dataset-CC%20BY%204.0-green.svg)](https://doi.org/10.6084/m9.figshare.29279702)
 
-**Calibrated Blood-Lactate Estimation from Wearable Signals via Workload-Conditioned Conformal Regression**
+**Calibrated Blood-Lactate Estimation from Wearable Sensor Arrays via Workload-Conditioned Conformal Calibration**
 
 A lightweight, fully reproducible framework for non-invasive blood lactate estimation from wearable physiological signals, with subject-stratified split-conformal prediction intervals.
 
