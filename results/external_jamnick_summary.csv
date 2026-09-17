@@ -1,0 +1,2 @@
+cohort,n_base_subjects,n_recordings,n_stages,MAE,RMSE,R2,cov_95
+Jamnick 2018,16,27,268,1.062,1.75,0.25,0.828

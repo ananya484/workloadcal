@@ -1,28 +1,27 @@
 cff-version: 1.2.0
-title: "WorkloadCal: Calibrated Blood-Lactate Estimation from Wearable Signals via Workload-Conditioned Conformal Regression"
-message: "If you use this software or the accompanying manuscript, please cite both."
+title: "WorkloadCal: Calibrated Blood-Lactate Estimation from Wearable Sensor Arrays via Workload-Conditioned Conformal Calibration"
+message: "If you use this software or the accompanying manuscript, please cite both, together with the two source datasets (Figshare 10.6084/m9.figshare.29279702; OSF 293ns / Jamnick et al. 2018)."
 type: software
 authors:
   - family-names: "Sharma"
     given-names: "Ananya"
     affiliation: "MIT School of Bioengineering Sciences and Research, MIT ADT University, Pune, India"
-    email: ananya.sharma.pune@gmail.com
+    orcid: "https://orcid.org/0009-0001-3081-7199"
 repository-code: "https://github.com/ananya484/workloadcal"
 license: MIT
 keywords:
   - wearable sensors
-  - sensor data processing
+  - sensor calibration
   - blood lactate
   - conformal prediction
   - uncertainty quantification
-  - workload conditioning
-  - multimodal machine learning
+  - leave-one-subject-out
 preferred-citation:
   type: article
-  title: "Calibrated Blood-Lactate Estimation from Wearable Signals via Workload-Conditioned Conformal Regression"
+  title: "Calibrated Blood-Lactate Estimation from Wearable Sensor Arrays via Workload-Conditioned Conformal Calibration"
   authors:
     - family-names: "Sharma"
       given-names: "Ananya"
   journal: "IEEE Sensors Letters"
   year: 2026
-  notes: "Submitted; preprint available on medRxiv"
+  notes: "Under review (revised submission, August 2026)"

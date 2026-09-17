@@ -4,17 +4,10 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
-data/*.csv
-!data/.gitkeep
 *.zip
-results/
-!results/.gitkeep
-figures/*.png
-!figures/.gitkeep
-paper/*.aux
-paper/*.log
-paper/*.out
-paper/*.bbl
-paper/*.blg
-paper/*.synctex.gz
-paper/*.pdf
+*.docx
+# raw datasets are auto-downloaded by the notebook; never commit them
+data/*
+!data/.gitkeep
+ext_data/*
+!ext_data/.gitkeep

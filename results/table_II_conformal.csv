@@ -1,0 +1,7 @@
+regime,nominal,empirical,width_mmol
+LAB+WEAR,0.8,0.703,3.685
+LAB+WEAR,0.9,0.83,5.472
+LAB+WEAR,0.95,0.861,7.236
+WEAR,0.8,0.768,3.923
+WEAR,0.9,0.852,5.99
+WEAR,0.95,0.876,7.65

@@ -1,0 +1,3 @@
+config,n,MAE,R2,wilcoxon_W,wilcoxon_p
+P (HR only),46,1.365,0.324,,
+Workload-conditioned,46,0.993,0.645,1024.0,0.0
