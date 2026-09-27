@@ -7,11 +7,10 @@
 
 Analysis code for a Letter submitted to *Physiological Measurement* (September 2026).
 
-> **Note on history.** An earlier version of this work, framed as a wearable sensor-calibration
-> method, was submitted to *IEEE Sensors Letters* and rejected in September 2026. Reviewer
-> criticism identified two defects that are corrected here, and the corrections changed the
-> paper's conclusion for the better. Both are documented below. The earlier version remains in
-> this repository's git history.
+> **Note on history.** An earlier version of this work was framed as a wearable
+> sensor-calibration method. Critical review of that version identified two defects that are
+> corrected here, and the corrections changed the paper's conclusion for the better. Both are
+> documented below. The earlier version remains in this repository's git history.
 
 ## The question
 
@@ -54,7 +53,7 @@ cycling cohort, LOSO grouped by unique participant:
 Protocol-only predictors *lose* accuracy when modality is varied (stage-only 1.363 → 1.512).
 Heart-rate-based predictors do not. That is the paper's finding.
 
-## Corrections relative to the IEEE submission
+## Corrections relative to the earlier version
 
 **1. Pooled cohort size was wrong.** LOSO folds were keyed on Jamnick *recordings*
 (`11MP_GXT3`, `11MP_GXT4`), so the same cyclist appeared on both sides of different folds and N
@@ -106,12 +105,11 @@ workloadcal/
 ├── analysis/                  # scripts generating every number in the manuscript
 ├── results/                   # CSV/JSON outputs (final_*.csv are the current manuscript)
 ├── figures_letter/            # the three manuscript figures, 300 dpi
-├── WorkloadCal_MASTER.ipynb   # notebook from the earlier IEEE submission (superseded)
 ├── data/ · ext_data/          # datasets land here (git-ignored)
 ├── CITATION.cff · LICENSE     # MIT
 ```
 
-`results/` also retains the CSVs from the earlier IEEE submission (`headline_metrics.csv`,
+`results/` also retains the CSVs from the earlier version (`headline_metrics.csv`,
 `table_II_conformal.csv`, `pooled_cross_cohort.csv`) so the corrections above can be checked
 against what was originally reported. The `final_*` files are the current manuscript's numbers.
 
