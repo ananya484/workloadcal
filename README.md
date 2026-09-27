@@ -1,105 +1,120 @@
 # WorkloadCal
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ananya484/workloadcal/blob/main/WorkloadCal_MASTER.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Primary data: CC BY 4.0](https://img.shields.io/badge/primary%20data-CC%20BY%204.0-green.svg)](https://doi.org/10.6084/m9.figshare.29279702)
 
-**Calibrated Blood-Lactate Estimation from Wearable Sensor Arrays via Workload-Conditioned Conformal Calibration**
+**Physiological features outperform prescribed workload for cross-modality blood-lactate estimation**
 
-Companion code for the manuscript under review at *IEEE Sensors Letters* (revised submission, August 2026).
-This repository contains the exact notebook and outputs that were submitted as supplementary material with the revised manuscript.
+Analysis code for a Letter submitted to *Physiological Measurement* (September 2026).
 
-## What it does
+> **Note on history.** An earlier version of this work, framed as a wearable sensor-calibration
+> method, was submitted to *IEEE Sensors Letters* and rejected in September 2026. Reviewer
+> criticism identified two defects that are corrected here, and the corrections changed the
+> paper's conclusion for the better. Both are documented below. The earlier version remains in
+> this repository's git history.
 
-A calibration layer for wearable physiological sensor arrays (ECG / HRV, respiratory, gait IMU) that
+## The question
 
-1. conditions a ridge regressor on workload descriptors computed from the sensor stream itself,
-2. wraps the point estimate in a **subject-stratified split-conformal** predictor, and
-3. is evaluated under strict **leave-one-subject-out (LOSO)** cross-validation, with all subject-relative features and outlier caps computed **inside each fold on training subjects only** (no look-ahead leakage).
+Wearable blood-lactate estimators are conventionally validated inside a single graded exercise
+protocol and benchmarked against a heart-rate-only baseline. But in a graded protocol the
+participant is *told* to move at a speed that rises on a fixed schedule, and lactate rises along
+with it — so the stage index is a proxy for the target that needs no sensor at all.
 
-## Reproduce (one click)
+Two questions follow:
 
-1. Open `WorkloadCal_MASTER.ipynb` in Google Colab (badge above).
-2. Runtime → Run all (~7–10 min on the free CPU runtime).
+1. Does physiological measurement add anything beyond the prescribed protocol?
+2. Does either source of information survive a change of exercise modality?
 
-The notebook downloads both datasets itself and regenerates every table and figure in the manuscript into `results/` and `figures/`.
+## Headline results
 
-Cell 11 additionally builds the manuscript `.docx`; it needs the IEEE Sensors Letters Word template placed at `/content/`, which is IEEE-copyrighted and not included here. All scientific outputs are produced by Cells 1–10 and do not need it.
+**Within one protocol, the protocol is a strong baseline.** Exercise stage alone — one integer,
+zero sensors — beats heart rate alone.
 
-Local run:
+| Predictor group | Features | LOSO MAE (mmol/L) | R² | AUC @ 4 mM |
+|---|---|---|---|---|
+| Stage only | 1 | 1.363 | 0.437 | 0.871 |
+| Workload only | 5 | 1.407 | 0.395 | 0.880 |
+| Heart rate only | 1 | 1.446 | 0.304 | 0.856 |
+| Workload + physiological | 22 | 1.059 | 0.632 | 0.922 |
+| Workload + physiological + cart | 43 | **1.004** | 0.663 | **0.944** |
+
+Improvement over the *stage-only* baseline is 26.3 % (Wilcoxon W = 154, p = 0.008) — not the
+30.6 % that the same model shows against a heart-rate-only baseline.
+
+**Across modalities, the relationship inverts.** Pooling the treadmill cohort with an independent
+cycling cohort, LOSO grouped by unique participant:
+
+| Predictor group | MAE (mmol/L) | R² | AUC | vs stage-only |
+|---|---|---|---|---|
+| Stage only | 1.512 | 0.276 | 0.812 | — |
+| Workload only | 1.439 | 0.298 | 0.879 | +4.8 % |
+| Heart rate only | 1.365 | 0.324 | 0.769 | +9.7 % |
+| Heart rate + workload | **0.953** | 0.659 | **0.926** | **+36.9 %, p < 0.0001** |
+
+Protocol-only predictors *lose* accuracy when modality is varied (stage-only 1.363 → 1.512).
+Heart-rate-based predictors do not. That is the paper's finding.
+
+## Corrections relative to the IEEE submission
+
+**1. Pooled cohort size was wrong.** LOSO folds were keyed on Jamnick *recordings*
+(`11MP_GXT3`, `11MP_GXT4`), so the same cyclist appeared on both sides of different folds and N
+was reported as 46. There are 16 unique cyclists, so the correct pooled N is **35**, not 46.
+Fixed in `analysis/pooled_corrected.py`, which prints both groupings side by side. The effect on
+the result is small (MAE 0.945 → 0.953) and significance is unchanged (p < 0.0001), but the
+reported N and the fold structure were incorrect as published.
+
+**2. No protocol-only baseline was reported.** The published baseline was heart-rate-only, which
+is weaker than the exercise stage index. Reported improvements were therefore optimistic. Fixed
+in `analysis/baseline_check.py`.
+
+Also changed: the word "calibrated" is dropped from the title. Split conformal attains nominal
+coverage here (0.985 at nominal 0.95) but with intervals ~11.6 mmol/L wide, comparable to the
+physiological range of the measurement; a workload-band Mondrian variant is 38 % narrower at
+0.924 coverage. Both are reported rather than only the more favourable one.
+
+## Reproducing
 
 ```bash
 git clone https://github.com/ananya484/workloadcal.git
 cd workloadcal
 pip install -r requirements.txt
-jupyter notebook WorkloadCal_MASTER.ipynb
+
+python analysis/baseline_check.py     # protocol-only baselines, primary cohort
+python analysis/pooled_corrected.py   # pooled LOSO, both groupings compared
+python analysis/final_numbers.py      # every number cited in the manuscript
+python analysis/make_figures.py       # the three manuscript figures
 ```
+
+The primary dataset downloads automatically. The external dataset must be placed at
+`ext_data/jamnick_DataSet.xlsx` — see **Data** below.
 
 ## Data
 
 | Cohort | Source | Licence | In this repo? |
 |---|---|---|---|
-| Primary — 19 subjects, incremental treadmill, ECG + metabolic cart + IMU | Figshare [10.6084/m9.figshare.29279702](https://doi.org/10.6084/m9.figshare.29279702) | CC BY 4.0 | No — auto-downloaded to `data/` |
-| External — Jamnick et al. 2018, 16 cyclists, 27 GXT recordings, 268 stages | OSF [293ns](https://osf.io/293ns/) (PLOS ONE, doi:10.1371/journal.pone.0199794) | No licence tag on OSF | No — auto-downloaded to `ext_data/`; **not redistributed** |
+| Primary — 19 participants, incremental treadmill, ECG + metabolic cart + IMU | Figshare [10.6084/m9.figshare.29279702](https://doi.org/10.6084/m9.figshare.29279702) | CC BY 4.0 | No — auto-downloaded to `data/` |
+| External — Jamnick *et al.* 2018, 16 cyclists, 27 GXT recordings, 268 stages | OSF [293ns](https://osf.io/293ns/) · [PLOS ONE](https://doi.org/10.1371/journal.pone.0199794) | No licence tag on OSF | No — **not redistributed** |
 
-Because the Jamnick data carry no reuse licence, this repository ships only *model predictions* for that cohort (`results/external_jamnick_predictions.csv`: subject, stage, predicted lactate). Running the notebook regenerates the full per-stage file locally.
-
-## Results shipped in `results/`
-
-All figures below are read directly from the CSVs in this repository.
-
-**Headline LOSO accuracy** (`headline_metrics.csv`, ridge regression):
-
-| Configuration | Features | MAE (mmol/L) | RMSE | R² |
-|---|---|---|---|---|
-| P — HR only | 1 | 1.446 | 2.277 | 0.304 |
-| WEAR — wearable-grade only | 22 | 1.286 | 1.864 | 0.534 |
-| LAB+WEAR — + metabolic cart | 43 | **1.143** | 1.780 | 0.575 |
-
-Bootstrap 95 % CIs on LOSO MAE (`bootstrap_ci.csv`): P [1.09, 1.69], WEAR [0.95, 1.51], LAB+WEAR [0.88, 1.41].
-
-**Pooled cross-cohort LOSO, N = 46 subjects** (`pooled_cross_cohort.csv`, common feature subset across treadmill + cycling):
-
-| Configuration | MAE | R² | Wilcoxon |
-|---|---|---|---|
-| P — HR only | 1.365 | 0.324 | — |
-| Workload-conditioned | **0.993** | 0.645 | W = 1024, p < 0.0001 |
-
-**External transfer, Jamnick 2018** (`external_jamnick_summary.csv`): MAE 1.062 mmol/L, RMSE 1.75, 95 % conformal coverage 0.828.
-
-**Split-conformal calibration under LOSO** (`table_II_conformal.csv`):
-
-| Regime | Nominal | Empirical | Mean width (mmol/L) |
-|---|---|---|---|
-| LAB+WEAR | 0.95 | 0.861 | 7.24 |
-| LAB+WEAR | 0.90 | 0.830 | 5.47 |
-| LAB+WEAR | 0.80 | 0.703 | 3.69 |
-| WEAR | 0.95 | 0.876 | 7.65 |
-| WEAR | 0.90 | 0.852 | 5.99 |
-| WEAR | 0.80 | 0.768 | 3.92 |
-
-Under-coverage relative to nominal is expected and reported as such: LOSO breaks exchangeability between calibration and test subjects, so the finite-sample split-conformal guarantee does not formally hold under subject shift. The numbers are the honest empirical figure.
-
-Per-subject LOSO MAE is in `per_subject_mae.csv`; per-configuration Wilcoxon tests in `wilcoxon.csv`.
+The Jamnick data carry no reuse licence, so this repository ships no raw values from that cohort —
+only model predictions (`results/external_jamnick_predictions.csv`: participant, stage, predicted
+lactate). Download the workbook from OSF yourself to reproduce the external and pooled analyses.
 
 ## Layout
 
 ```
 workloadcal/
-├── WorkloadCal_MASTER.ipynb   # the single reproducible pipeline (submitted as supplementary)
-├── requirements.txt
-├── results/                   # CSV outputs of the notebook (as submitted)
-├── figures/                   # 6 manuscript figures + graphical abstract, 200 dpi
-├── data/                      # primary dataset lands here (git-ignored)
-├── ext_data/                  # external dataset lands here (git-ignored)
-├── CITATION.cff
-└── LICENSE                    # MIT
+├── analysis/                  # scripts generating every number in the manuscript
+├── results/                   # CSV/JSON outputs (final_*.csv are the current manuscript)
+├── figures_letter/            # the three manuscript figures, 300 dpi
+├── WorkloadCal_MASTER.ipynb   # notebook from the earlier IEEE submission (superseded)
+├── data/ · ext_data/          # datasets land here (git-ignored)
+├── CITATION.cff · LICENSE     # MIT
 ```
 
-## History
-
-The first submission (May 2026) and its notebook are preserved in this repository's git history (commits up to 2026-06-08). The revised pipeline in this tree differs from it in three ways, all described in the response to reviewers: split-conformal is implemented exactly as §II.D describes (earlier code ran conformalised quantile regression); subject-relative features and HRV winsorisation are computed per fold on training subjects only; and the single-subject Kaggle recording used for external validation was replaced by the 16-subject Jamnick cohort.
+`results/` also retains the CSVs from the earlier IEEE submission (`headline_metrics.csv`,
+`table_II_conformal.csv`, `pooled_cross_cohort.csv`) so the corrections above can be checked
+against what was originally reported. The `final_*` files are the current manuscript's numbers.
 
 ## Citation
 
-See `CITATION.cff`. Please also cite the two source datasets.
+See `CITATION.cff`. Please also cite both source datasets.

@@ -1,0 +1,5 @@
+config,n_people,MAE,R2,W_vs_stage_only,p_vs_stage_only
+stage only,35,1.512,0.276,615,3.987224772572517e-09
+workload only (no physio),35,1.439,0.298,615,3.987224772572517e-09
+HR only (old baseline),35,1.365,0.324,615,3.987224772572517e-09
+HR + workload,35,0.953,0.659,615,3.987224772572517e-09

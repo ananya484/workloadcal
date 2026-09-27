@@ -1,0 +1,2 @@
+threshold,n_above,n_below,TP,TN,FP,FN,sensitivity,specificity,PPV,NPV,AUC
+4.0,57,75,48,64,11,9,0.842,0.853,0.814,0.877,0.944

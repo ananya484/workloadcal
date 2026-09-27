@@ -1,0 +1,135 @@
+{
+  "primary": {
+    "stage only": {
+      "mae": 1.363,
+      "rmse": 2.049,
+      "r2": 0.437,
+      "n": 1,
+      "auc": 0.871
+    },
+    "workload only": {
+      "mae": 1.407,
+      "rmse": 2.123,
+      "r2": 0.395,
+      "n": 5,
+      "auc": 0.88
+    },
+    "HR only": {
+      "mae": 1.446,
+      "rmse": 2.277,
+      "r2": 0.304,
+      "n": 1,
+      "auc": 0.856
+    },
+    "workload+physio (WEAR)": {
+      "mae": 1.059,
+      "rmse": 1.657,
+      "r2": 0.632,
+      "n": 22,
+      "auc": 0.922
+    },
+    "workload+physio+cart": {
+      "mae": 1.004,
+      "rmse": 1.586,
+      "r2": 0.663,
+      "n": 43,
+      "auc": 0.944
+    }
+  },
+  "wilcoxon_primary": [
+    {
+      "baseline": "stage only",
+      "model": "workload+physio (WEAR)",
+      "improvement_pct": 22.3,
+      "W": 152,
+      "p_one_sided": 0.0102
+    },
+    {
+      "baseline": "stage only",
+      "model": "workload+physio+cart",
+      "improvement_pct": 26.3,
+      "W": 154,
+      "p_one_sided": 0.008
+    },
+    {
+      "baseline": "workload only",
+      "model": "workload+physio (WEAR)",
+      "improvement_pct": 24.8,
+      "W": 157,
+      "p_one_sided": 0.0054
+    },
+    {
+      "baseline": "workload only",
+      "model": "workload+physio+cart",
+      "improvement_pct": 28.7,
+      "W": 159,
+      "p_one_sided": 0.0041
+    },
+    {
+      "baseline": "HR only",
+      "model": "workload+physio+cart",
+      "improvement_pct": 30.6,
+      "W": 159,
+      "p_one_sided": 0.0041
+    }
+  ],
+  "conformal": [
+    {
+      "method": "split",
+      "nominal": 0.95,
+      "empirical": 0.985,
+      "mean_width": 11.61
+    },
+    {
+      "method": "split",
+      "nominal": 0.9,
+      "empirical": 0.977,
+      "mean_width": 9.68
+    },
+    {
+      "method": "split",
+      "nominal": 0.8,
+      "empirical": 0.856,
+      "mean_width": 4.2
+    },
+    {
+      "method": "mondrian",
+      "nominal": 0.95,
+      "empirical": 0.924,
+      "mean_width": 7.18
+    },
+    {
+      "method": "mondrian",
+      "nominal": 0.9,
+      "empirical": 0.924,
+      "mean_width": 6.78
+    },
+    {
+      "method": "mondrian",
+      "nominal": 0.8,
+      "empirical": 0.879,
+      "mean_width": 5.33
+    }
+  ],
+  "threshold": {
+    "threshold": 4.0,
+    "n_above": 57,
+    "n_below": 75,
+    "TP": 48,
+    "TN": 64,
+    "FP": 11,
+    "FN": 9,
+    "sensitivity": 0.842,
+    "specificity": 0.853,
+    "PPV": 0.814,
+    "NPV": 0.877,
+    "AUC": 0.944
+  },
+  "bland_altman": {
+    "bias": -0.077,
+    "loa_lo": -3.18,
+    "loa_hi": 3.03
+  },
+  "n_primary_subjects": 19,
+  "n_primary_samples": 132
+}

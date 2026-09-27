@@ -11,3 +11,4 @@ data/*
 !data/.gitkeep
 ext_data/*
 !ext_data/.gitkeep
+ext_data/*.xlsx

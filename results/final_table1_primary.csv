@@ -1,0 +1,6 @@
+config,n_feat,MAE,RMSE,R2,AUC_4mM
+stage only,1,1.363,2.049,0.437,0.871
+workload only,5,1.407,2.123,0.395,0.88
+HR only,1,1.446,2.277,0.304,0.856
+workload+physio (WEAR),22,1.059,1.657,0.632,0.922
+workload+physio+cart,43,1.004,1.586,0.663,0.944

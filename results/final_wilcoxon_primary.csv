@@ -1,0 +1,6 @@
+baseline,model,improvement_pct,W,p_one_sided
+stage only,workload+physio (WEAR),22.3,152,0.0102
+stage only,workload+physio+cart,26.3,154,0.008
+workload only,workload+physio (WEAR),24.8,157,0.0054
+workload only,workload+physio+cart,28.7,159,0.0041
+HR only,workload+physio+cart,30.6,159,0.0041

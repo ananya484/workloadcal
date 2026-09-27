@@ -1,0 +1,7 @@
+method,nominal,empirical,mean_width
+split,0.95,0.985,11.61
+split,0.9,0.977,9.68
+split,0.8,0.856,4.2
+mondrian,0.95,0.924,7.18
+mondrian,0.9,0.924,6.78
+mondrian,0.8,0.879,5.33
