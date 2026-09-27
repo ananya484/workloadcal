@@ -215,7 +215,7 @@ ax.plot([0.75, 1.0], [0.75, 1.0], '--', color='#888', lw=0.9, label='Ideal', zor
 for meth, mk, col in [('split', 'o', '#1f4e79'), ('mondrian', 's', '#b8860b')]:
     s = conf[conf['method'] == meth].sort_values('nominal')
     ax.plot(s['nominal'], s['empirical'], mk + '-', color=col, ms=6, lw=1.3,
-            label=('Split conformal' if meth == 'split' else 'Mondrian (workload band)'),
+            label=('Split conformal' if meth == 'split' else 'Mondrian (stage band)'),
             zorder=3, mec='black', mew=0.5)
     for _, r in s.iterrows():
         ax.annotate('%.1f' % r['mean_width'], (r['nominal'], r['empirical']),
@@ -225,7 +225,7 @@ ax.set_ylabel('Empirical coverage (LOSO)')
 ax.set_xlim(0.76, 0.99)
 ax.set_ylim(0.78, 1.01)
 ax.legend(frameon=False, fontsize=7.5, loc='lower right')
-ax.set_title('Valid coverage, but interval width (mmol L$^{-1}$, annotated)\nis comparable to the measurement range',
+ax.set_title('Split conformal attains nominal coverage;\nannotated widths (mmol L$^{-1}$) are large',
              fontsize=8, pad=8)
 plt.savefig(FIG / 'fig2_coverage.png')
 plt.close()
