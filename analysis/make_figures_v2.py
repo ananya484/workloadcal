@@ -1,9 +1,9 @@
 """Figures for the rewritten manuscript. Reads results/v2_numbers.json (from final_v2.py).
 
 Fig 1  pooled 35 participants: heart-rate-only vs stage-only vs protocol+HR, ridge and forest.
-Fig 2  transfer between cohorts: protocol keeps ORDER (AUC) but loses LEVEL (bias); heart rate
+Fig 3  transfer between cohorts: protocol keeps ORDER (AUC) but loses LEVEL (bias); heart rate
        the reverse.
-Figures 3 and 4 (coverage; threshold/agreement) are produced by make_figures.py and reused.
+Figures 2 (threshold/agreement) and 4 (coverage) are produced by make_figures.py and reused.
 """
 import json
 import shutil
@@ -71,10 +71,10 @@ l += ['treadmill → cycling', 'cycling → treadmill']
 ax.legend(h, l, frameon=False, fontsize=6.8, loc='center right', bbox_to_anchor=(1.0, 0.42))
 ax.set_title('Train on one cohort, test on the other:\nprotocol keeps order, loses level',
              fontsize=8.5)
-plt.savefig(FIG / 'fig2_transfer.png')
+plt.savefig(FIG / 'fig3_transfer.png')
 plt.close()
 
 # reuse coverage + threshold/agreement figures
-shutil.copy('figures_letter/fig2_coverage.png', FIG / 'fig3_coverage.png')
-shutil.copy('figures_letter/fig3_threshold_agreement.png', FIG / 'fig4_threshold_agreement.png')
+shutil.copy('figures_letter/fig2_coverage.png', FIG / 'fig4_coverage.png')
+shutil.copy('figures_letter/fig3_threshold_agreement.png', FIG / 'fig2_threshold_agreement.png')
 print('wrote', sorted(p.name for p in FIG.glob('*.png')))

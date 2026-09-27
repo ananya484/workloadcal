@@ -22,8 +22,9 @@ exercise modality known:
 | Protocol + heart rate | yes | 0.906 | 0.953 | 0.796 | 0.966 |
 
 MAE in mmol/L, leave-one-subject-out grouped by participant; AUC for lactate >= 4 mmol/L.
-Adding heart rate improves on the stage-only baseline by 3-7 % (not robustly distinguishable from
-zero) but on the heart-rate-only baseline by 34-43 %. The baseline, not the sensing, accounts for
+Relative to the stage-only baseline, adding heart rate improves MAE by 3-6 %, and the confidence
+interval of that improvement includes zero under both models; relative to the heart-rate-only
+baseline, the same model improves MAE by 34-43 %. The baseline, not the sensing, accounts for
 most of the reported gain.
 
 ## Reproduce
