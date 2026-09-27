@@ -22,8 +22,8 @@ RES = Path('results')
 OUT = {}
 
 with contextlib.redirect_stdout(io.StringIO()):
-    rb = runpy.run_path('robustness.py')          # builds pooled frame c, ridge(), forest()
-    fn = runpy.run_path('final_numbers.py')       # builds treadmill frame d + helpers
+    rb = runpy.run_path('analysis/robustness.py')          # builds pooled frame c, ridge(), forest()
+    fn = runpy.run_path('analysis/final_numbers.py')       # builds treadmill frame d + helpers
 c, ridge, forest = rb['c'], rb['ridge'], rb['forest']
 c['modality'] = (c['cohort'] == 'cycling').astype(float)
 
