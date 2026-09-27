@@ -1,0 +1,25 @@
+predictor,model,anchor,TC_MAE,TC_spearman,TC_AUC,CT_MAE,CT_spearman,CT_AUC
+stage only,ridge,False,3.206,0.814,0.985,3.058,0.771,0.896
+workload (rescaled units),ridge,False,3.067,0.821,0.985,3.11,0.753,0.895
+workload (z within cohort),ridge,False,2.952,0.821,0.985,3.164,0.734,0.897
+heart rate only,ridge,False,1.303,0.374,0.651,1.424,0.729,0.868
+heart-rate dynamics,ridge,False,1.518,0.444,0.711,1.633,0.786,0.905
+HR dyn + workload (z),ridge,False,1.538,0.835,0.979,2.441,0.682,0.843
+stage only,ridge,True,2.337,0.896,0.982,2.121,0.485,0.762
+workload (rescaled units),ridge,True,2.351,0.898,0.98,2.194,0.494,0.767
+workload (z within cohort),ridge,True,2.194,0.898,0.98,2.245,0.485,0.762
+heart rate only,ridge,True,1.378,0.348,0.615,1.898,0.467,0.763
+heart-rate dynamics,ridge,True,1.414,0.44,0.668,1.707,0.659,0.846
+HR dyn + workload (z),ridge,True,1.137,0.903,0.974,2.222,0.431,0.727
+stage only,forest,False,3.083,0.798,0.964,3.145,0.605,0.856
+workload (rescaled units),forest,False,2.928,0.786,0.956,2.991,0.677,0.866
+workload (z within cohort),forest,False,2.609,0.793,0.962,2.929,0.733,0.874
+heart rate only,forest,False,1.361,0.337,0.65,1.787,0.552,0.725
+heart-rate dynamics,forest,False,1.389,0.351,0.643,1.776,0.509,0.745
+HR dyn + workload (z),forest,False,1.325,0.577,0.756,2.845,0.713,0.856
+stage only,forest,True,2.351,0.881,0.963,2.625,0.418,0.72
+workload (rescaled units),forest,True,2.189,0.856,0.936,2.504,0.403,0.716
+workload (z within cohort),forest,True,1.882,0.868,0.947,2.46,0.406,0.716
+heart rate only,forest,True,1.345,0.397,0.67,2.148,0.266,0.672
+heart-rate dynamics,forest,True,1.352,0.377,0.661,2.158,0.261,0.663
+HR dyn + workload (z),forest,True,1.218,0.601,0.769,2.369,0.424,0.725

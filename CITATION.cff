@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "WorkloadCal: Physiological features outperform prescribed workload for cross-modality blood-lactate estimation"
+title: "WorkloadCal: Exercise stage explains most of the accuracy of blood-lactate estimation in graded exercise tests"
 message: "If you use this software or the accompanying manuscript, please cite both, together with the two source datasets (Figshare 10.6084/m9.figshare.29279702; OSF 293ns / Jamnick et al. 2018)."
 type: software
 authors:
@@ -18,10 +18,10 @@ keywords:
   - leave-one-subject-out
 preferred-citation:
   type: article
-  title: "Physiological features outperform prescribed workload for cross-modality blood-lactate estimation"
+  title: "Exercise stage explains most of the accuracy of blood-lactate estimation in graded exercise tests"
   authors:
     - family-names: "Sharma"
       given-names: "Ananya"
   journal: "Physiological Measurement"
   year: 2026
-  notes: "Submitted as a Letter, September 2026"
+  notes: "Submitted, September 2026"
